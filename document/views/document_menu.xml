@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="documentos_documentos_menu" name="Documento" web_icon="document,static/description/icon.png"
+            sequence="10"/>
+
+        <menuitem id="submenu_documentos_documentos_menu" name="Documentos" parent="documentos_documentos_menu"
+            sequence="10" action="act_documentos_documentos"/>
+
+        <menuitem id="submenu_documentos_carpetas_menu" name="Carpetas" parent="documentos_documentos_menu"
+            sequence="20" action="act_documentos_carpetas"/>
+
+    </data>
+</odoo>
