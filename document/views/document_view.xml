@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="documentos_documentos_view_kanban" model="ir.ui.view">
+        <field name="name">documentos.documentos.view.kanban</field>
+        <field name="model">documentos.documentos</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="row">
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="description"/>
+                                <field name="content"/>
+                                <field name="url"/>
+                                <field name="folder_id"/>
+                                <field name="date"/>
+                                <field name="author_id"/>
+                            </div>
+                            <field name="file"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="documentos_documentos_view_form" model="ir.ui.view">
+        <field name="name">documentos.documentos.view.form</field>
+        <field name="model">documentos.documentos</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="content"/>
+                        <field name="author_id"/>
+                        <field name="url"/>
+                        <field name="folder_id"/>
+                        <field name="date"/>
+                        <field name="file" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="act_documentos_documentos" model="ir.actions.act_window">
+        <field name="name">Documentos</field>
+        <field name="res_model">documentos.documentos</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="view_id" ref="documentos_documentos_view_kanban"/>
+    </record>
+    
+</odoo>
